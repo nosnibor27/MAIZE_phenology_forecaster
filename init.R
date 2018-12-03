@@ -5,7 +5,16 @@ library(RNetCDF)
 library(zoo)
 
 #Add sites of interest here using "Town State"
+<<<<<<< HEAD
 sites <- c("Emmet Nebraska")
+=======
+sites <- c("Pullman Washington",
+           "Pendleton Oregon",
+           "Havre Montana",
+           "Akron Colorado",
+           "Hutchinson Kansas",
+           "Enid Oklahoma")
+>>>>>>> 966fb0efd67a56910492eda1c55b18cfcc124581
 
 #creating a data frame
 locations <- data.frame(sites,stringsAsFactors = FALSE)
@@ -87,6 +96,7 @@ source("saving_arrays.r")
 #option to load saved arrays
 source("loading_arrays.r")
 
+<<<<<<< HEAD
 #inputs for maize growth model
 
 #vector of early, mid, and late planting dates (input as "-MM-DD")
@@ -100,6 +110,25 @@ G_3 <- mean(c(685,730,685,685))
 
 #running the CERES-Wheat model using the inputs above
 source("CERES_maize_model.R")
+=======
+#inputs for wheat grown model
+
+#planting depth (in inches)
+planting_depth <- 2
+
+#vector of early, mid, and late planting dates (input as "-MM-DD")
+planting_dates <- c("-09-01","-10-01","-11-01")
+
+#assigning genetic photoperiod coefficient using "Nugaines" wheat (G_1)
+G_1 <- 0.0044
+
+#need to set leaf appearance rate based on thermal time per leaf (phyllochron) 
+#when not known a good recommended estimate is 95
+phyllochron <- 95
+
+#running the CERES-Wheat model using the inputs above
+source("CERES_wheat_model.r")
+>>>>>>> 966fb0efd67a56910492eda1c55b18cfcc124581
 
 #adding humidity variables to the arrays
 source("additional_weather_variables.r")
@@ -107,3 +136,10 @@ source("additional_weather_variables.r")
 #plotting functions
 source("plotting.r")
 
+<<<<<<< HEAD
+=======
+#plotting dashboard example
+PLOT_DASHBOARD_1(1,4,2)
+
+PLOT_DASHBOARD_2(1,4,2)
+>>>>>>> 966fb0efd67a56910492eda1c55b18cfcc124581
