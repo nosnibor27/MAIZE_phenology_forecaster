@@ -87,7 +87,6 @@ source("saving_arrays.r")
 #option to load saved arrays
 source("loading_arrays.r")
 
-<<<<<<< HEAD
 #inputs for maize growth model
 
 #vector of early, mid, and late planting dates (input as "-MM-DD")
