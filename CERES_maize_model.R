@@ -371,12 +371,13 @@ SPANNER <- function(start,vector_1,vector_2,vector_3){
 for (n in 1:N){
   #copying the array of interest
   A <- get(paste0(locations$town[n],"_hist"))
+  B <-  get(paste0(locations$town[n],"_RATEIN_hist"))
   #creating an indexing array [model, year, stage, planting]
   span_array_hist <- array(dim=c(20,55,6,3))
   for(j in 1:20){
-    matrix_1 <- SPANNER(pd_hist_e,A[7,j,],A[8,j,])
-    matrix_2 <- SPANNER(pd_hist_m,A[7,j,],A[8,j,])
-    matrix_3 <- SPANNER(pd_hist_l,A[7,j,],A[8,j,])
+    matrix_1 <- SPANNER(pd_hist_e,A[7,j,],A[8,j,],B)
+    matrix_2 <- SPANNER(pd_hist_m,A[7,j,],A[8,j,],B)
+    matrix_3 <- SPANNER(pd_hist_l,A[7,j,],A[8,j,],B)
     span_array_hist[j,,,1] <- matrix_1
     span_array_hist[j,,,2] <- matrix_2
     span_array_hist[j,,,3] <- matrix_3
@@ -391,12 +392,13 @@ for (n in 1:N){
 for (n in 1:N){
   #copying the array of interest
   A <- get(paste0(locations$town[n],"_45"))
+  B <-  get(paste0(locations$town[n],"_RATEIN_future"))
   #creating an indexing array [model, year, stage, planting]
   span_array_fut <- array(dim=c(20,93,6,3))
   for(j in 1:20){
-    matrix_1 <- SPANNER(pd_fut_e,A[7,j,],A[8,j,])
-    matrix_2 <- SPANNER(pd_fut_m,A[7,j,],A[8,j,])
-    matrix_3 <- SPANNER(pd_fut_l,A[7,j,],A[8,j,])
+    matrix_1 <- SPANNER(pd_fut_e,A[7,j,],A[8,j,],B)
+    matrix_2 <- SPANNER(pd_fut_m,A[7,j,],A[8,j,],B)
+    matrix_3 <- SPANNER(pd_fut_l,A[7,j,],A[8,j,],B)
     span_array_fut[j,,,1] <- matrix_1
     span_array_fut[j,,,2] <- matrix_2
     span_array_fut[j,,,3] <- matrix_3
@@ -411,12 +413,13 @@ for (n in 1:N){
 for (n in 1:N){
   #copying the array of interest
   A <- get(paste0(locations$town[n],"_85"))
+  B <-  get(paste0(locations$town[n],"_RATEIN_future"))
   #creating an indexing array [model, year, stage, planting]
   span_array_fut <- array(dim=c(20,93,6,3))
   for(j in 1:20){
-    matrix_1 <- SPANNER(pd_fut_e,A[7,j,],A[8,j,])
-    matrix_2 <- SPANNER(pd_fut_m,A[7,j,],A[8,j,])
-    matrix_3 <- SPANNER(pd_fut_l,A[7,j,],A[8,j,])
+    matrix_1 <- SPANNER(pd_fut_e,A[7,j,],A[8,j,],B)
+    matrix_2 <- SPANNER(pd_fut_m,A[7,j,],A[8,j,],B)
+    matrix_3 <- SPANNER(pd_fut_l,A[7,j,],A[8,j,],B)
     span_array_fut[j,,,1] <- matrix_1
     span_array_fut[j,,,2] <- matrix_2
     span_array_fut[j,,,3] <- matrix_3
