@@ -427,7 +427,7 @@ PLOT_STAGE <- function(n,s,p){
   lines(y=start_date[p]+quantile_hist[3,],x=seq(1:55),col="black",lwd=2)
   lines(y=start_date[p]+quantile_45[3,],x=seq(55,147,1),col="blue",lwd=2)
   lines(y=start_date[p]+quantile_85[3,],x=seq(55,147,1),col="red",lwd=2)
-  mtext(stage_lab[s],side=3,line=-2.5,cex=2)
+  mtext(stage_lab[s],side=3,line=1.5,cex=2)
   legend("top", inset=.02, title="Scenario",
          c("Historical simulation","RCP 4.5","RCP 8.5"), fill=c("black","blue","red"))
 }
