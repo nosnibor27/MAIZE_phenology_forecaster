@@ -407,8 +407,8 @@ PLOT_STAGE <- function(n,s,p){
   month_doy <- c(1,32,60,91,121,152,182,213,244,274,305)
   month_lab <- c("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov")
   month_lty <- c(1,rep(2,10))
-  stage_lab <- c("Germination","Emergence","Tillering","Booting",
-                 "Flowering","Grain filling","Maturity")
+  stage_lab <- c("Emergence","Juvenile phase","Tassel initiation delay","Tassel emergence",
+                 "Silking","Maturity")
   plot(0,type="n",xlim=c(0,150),ylim=c(0,365),xlab="Year",ylab="Day of the year",
        main=NULL,axes=FALSE)
   box()
@@ -428,6 +428,8 @@ PLOT_STAGE <- function(n,s,p){
   lines(y=start_date[p]+quantile_45[3,],x=seq(55,147,1),col="blue",lwd=2)
   lines(y=start_date[p]+quantile_85[3,],x=seq(55,147,1),col="red",lwd=2)
   mtext(stage_lab[s],side=3,line=-2.5,cex=2)
+  legend("top", inset=.02, title="Scenario",
+         c("Historical simulation","RCP 4.5","RCP 8.5"), fill=c("black","blue","red"))
 }
 
 PLOT_DASHBOARD_1 <- function(n,s,p){
